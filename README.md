@@ -2,6 +2,10 @@
 
 Welcome to Snazzy CRM, the snazziest CRM for all your CRM needs!
 
+# Note
+Here problem-backend-java has the original code to change, while backend-java has the implemented solution. 
+The challenge is explained in this file.
+
 ## Installation
 
 ### Requirements
