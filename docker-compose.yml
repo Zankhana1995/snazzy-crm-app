@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  backend-java:
+    build:
+      dockerfile: Dockerfile
+      context: ./backend-java
+      args:
+        ENVIRONMENT: local
+    container_name: backend-java
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend-java:/app
+      - ./snazzycrm.db:/app/snazzycrm.db
+      - ./snazzycrm.sql:/app/snazzycrm.sql
+    profiles: [java]
+
+  backend-php:
+    build:
+      dockerfile: Dockerfile
+      context: ./backend-php
+      args:
+        ENVIRONMENT: local
+    container_name: backend-php
+    command: ./start.sh
+    ports:
+      - "9090:80"
+    volumes:
+      - ./backend-php:/app
+      - ./snazzycrm.db:/app/snazzycrm.db
+      - ./snazzycrm.sql:/app/snazzycrm.sql
+    environment:
+      WEB_DOCUMENT_ROOT: /app/public
+    profiles: [php]
