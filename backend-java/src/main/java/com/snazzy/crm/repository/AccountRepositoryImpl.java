@@ -55,14 +55,3 @@ public class AccountRepositoryImpl implements SearchRepository<Account, AccountS
         return entityManager.createQuery(query).getResultList();
     }
 }
-
-/**
-
- SELECT DISTINCT a.*
- FROM account a
- LEFT JOIN contact c ON c.account_id = a.id
- WHERE (c.phone_number LIKE '%query%')
- AND (c.id IS NULL)
- ORDER BY a.id ASC;
-
- */
