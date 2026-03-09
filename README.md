@@ -305,10 +305,5 @@ returns
 ```
 422
 ```
-
-### Submitting your code
-
-When you are done, please commit your changes, and perform one of the following:
-1. If you have received the challenge via Google Drive feel free to push your changes directly to the drive or compress your changes to `.zip` file and push that directly to the drive.
-2. If you have received the challenge via email please compact your codebase in a `.zip` file to include your name or initials,
-and reply to that email with that as an attachment.
+### pagination
+http://localhost:8080/accountwithPage?page=0&size=2
